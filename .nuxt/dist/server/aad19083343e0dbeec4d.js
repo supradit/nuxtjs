@@ -1,0 +1,1 @@
+exports.ids=[1],exports.modules={38:function(t,e,r){"use strict";r.r(e);var o={layout:"login"},l=r(1),component=Object(l.a)(o,(function(){var t=this.$createElement;return(this._self._c||t)("div",[this._ssrNode("<h1>Login From</h1><br>")])}),[],!1,null,null,"e797a2fc");e.default=component.exports}};
