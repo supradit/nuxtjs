@@ -46,14 +46,6 @@
             <v-list-item-title>Css Class Binding && Route</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item link to="/sample06">
-          <v-list-item-action>
-            <v-icon>mdi-view-dashboard</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>xxx</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
         <v-list-item link to="/auth">
           <v-list-item-action>
             <v-icon>mdi-view-dashboard</v-icon>
@@ -62,7 +54,7 @@
             <v-list-item-title>New Layout</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item link to="/sample07">
+        <v-list-item link to="/sample06">
           <v-list-item-action>
             <v-icon>mdi-view-dashboard</v-icon>
           </v-list-item-action>
@@ -70,7 +62,7 @@
             <v-list-item-title>Set Session</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item link to="/sample08">
+        <v-list-item link to="/sample07">
           <v-list-item-action>
             <v-icon>mdi-view-dashboard</v-icon>
           </v-list-item-action>
@@ -78,7 +70,7 @@
             <v-list-item-title>Detect Session</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item link to="/sample09">
+        <v-list-item link to="/sample08">
           <v-list-item-action>
             <v-icon>mdi-view-dashboard</v-icon>
           </v-list-item-action>
@@ -102,7 +94,7 @@
             <v-list-item-title>Vuex Store - 1</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item link to="/sample10">
+        <v-list-item link to="/sample09">
           <v-list-item-action>
             <v-icon>mdi-view-dashboard</v-icon>
           </v-list-item-action>
@@ -110,12 +102,20 @@
             <v-list-item-title>Vuex Store - 2</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item link to="/sample11">
+        <v-list-item link to="/sample10">
           <v-list-item-action>
             <v-icon>mdi-view-dashboard</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>Meta Tag - SEO</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item link to="/sample11">
+          <v-list-item-action>
+            <v-icon>mdi-view-dashboard</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Get Data From State</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>

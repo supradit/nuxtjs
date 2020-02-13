@@ -1,9 +1,10 @@
 <template>
     <div>
-        <h1>Mata Tag - SEO</h1><br />
-        <ul>
-            <li v-for="row in posts" :key="row.id">
-                {{row.title}}<br />
+        <h1>Get Data From State - Advence</h1><br />
+        <img v-if="loading" src="https://i.imgur.com/JfPpwOA.gif">
+        <ul v-else>
+            <li v-for="product in products" :key="product.id">
+                {{product.title}} - {{product.price}}
             </li>
         </ul>
     </div>
@@ -11,23 +12,21 @@
 
 <script>
 
-import header from '@/components/header'
-
 export default {
-    head(){
+    data(){
         return{
-            title: "Gaming",
-            meta:[
-                {name: 'twitter:title', content: 'title'},
-                {name: 'twitter:description', content: 'description'},
-                {name: 'twitter:image', content: 'image path'}
-            ]
+            loading: false
         }
     },
     computed: {
-        posts(){
-            return this.$store.state.posts.all
+        // เรียก Value มาจาก api/shop
+        products () {
+            return this.$store.getters.availableProducts
         }
     },
+    created(){
+        this.loading = true
+        this.$store.dispatch('fetchProducts').then(() => this.loading = false)
+    }
 }
 </script>

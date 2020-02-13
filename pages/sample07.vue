@@ -1,50 +1,24 @@
 <template>
     <div>
-        <h1>Set Session Process</h1><br />
-        <v-text-field
-            v-model="form.user"
-            :counter="10"
-            label="Username"
-            required
-          ></v-text-field>
-          <v-text-field
-            v-model="form.pass"
-            :counter="10"
-            label="Password"
-            required
-          ></v-text-field>
-        <v-btn @click="loginAction">เข้าสู่ระบบ</v-btn>
-        <v-btn @click="clearAction">คืนค่า</v-btn>
+        <h1>Session Detect Process</h1><br />
+        <v-btn @click="logoutAction">ออกจากระบบ</v-btn>
     </div>
 </template>
 
 <script>
-
-const blankform = {
-    user: '',
-    pass: ''
-}
-
 export default {
-    data() {
-        return {
-            form: JSON.parse(JSON.stringify(blankform))
+    //หากต้องการให้เช็คทุกหน้าให้ไปตั้งที่หน้า default.vue และในส่วนของหน้า Login ให้ใช้ Layout แยกกัน ไม่อย่างงั้นจะ Error
+    created() {
+        let userObj = JSON.parse(window.sessionStorage.getItem('user') || '{}')
+        if(!userObj.user){
+            return this.$router.replace('/login')
         }
     },
     methods: {
-        //หรือใช้ express-session
-        async loginAction() {
-            let res = await this.$http.post('/login', this.form)
-            if(!res.data.ok){
-                return ''
-            }
-            window.sessionStorage.setItem('user', JSON.stringify({
-                user : this.form.user
-            }))
-            this.$router.push('/home')
-        },
-        clearAction() {
-            this.form = JSON.parse(JSON.stringify(this.blankform))
+        //Function Logout
+        logoutAction() {
+            window.sessionStorage.removeItem('user')
+            this.$router.replace('/login')
         }
     },
 }

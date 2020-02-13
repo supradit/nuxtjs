@@ -1,17 +1,21 @@
 <template>
     <div>
-        <h1>Include Header</h1><br />
-        <header />
+        <h1>Get Data From State - Basic</h1><br />
+        <ul>
+            <li v-for="row in posts" :key="row.id">
+                {{row.title}}<br />
+            </li>
+        </ul>
     </div>
 </template>
 
 <script>
 
-import header from '@/components/header'
-
 export default {
-    components: {
-        header
-    }
+    computed: {
+        posts(){
+            return this.$store.state.posts.all
+        }
+    },
 }
 </script>
